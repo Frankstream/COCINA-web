@@ -1,22 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es" >
 <head>
   <meta charset="UTF-8">
   <title>CodePen - Modal password</title>
-  <link rel="stylesheet" href="./style.css">
+
+
+<style>
+
+#password-modal {
+    width: 100vw;
+    height: 305vh;
+    background-color: #000;
+    position: absolute;
+    z-index: 1000000;
+}
+
+.password-container {
+    position: fixed;
+    top: 38%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 25px;
+    right: 0;
+    left: 0;
+    padding: 40px;
+    background-color: #222;
+}
+  
+.password.label {
+    display: block;
+    padding: 0em 0em 0em 0em;
+    margin: 0px 0px 0px 0px;
+    font-size: 75%;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0em;
+}
+
+.password-container input {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+</style>
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div id="password-modal">
 			<div class="password-container">
-				<p class="password label">Please enter password</p>
-				<input id="password_input" type="password" name="" value="" placeholder="Password"/>
-                    <input type="submit" type="button" value="Submit" onclick="checkPassword()" />
+				<p class="password label">Por favor introduce la contraseña</p>
+				<input id="password_input" type="password" name="" value="" placeholder="Contraseña"/>
+                    <input type="submit" type="button" value="Entrar" onclick="checkPassword()" />
 			</div>
 		</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  
+<script language="javascript">
+  
+    var passProtect = {
+        id: $("#password_input"),
+        key: "sex69",
+        errorMessage: "Sorry, please try again",
+        errorState: function () {
+            passProtect.id.css("border", "1px solid rgb(255,0,0)");
+            $(".password-container .label").html(passProtect.errorMessage);
+        },
+        successMessage: "Success!",
+        successState: function () {
+            passProtect.id.css("border", "1px solid rgb(0,200,100)");
+            $(".password-container.label").html(passProtect.successMessage);
+        },
+        prompt: "Please enter password "
+    };
+
+    function openUp() {
+        $("#password-modal").fadeOut(250);
+    }
+
+    function checkPassword() {
+        var passVal = passProtect.id.val();
+        console.log(passVal, passProtect.key)
+        if (passVal === passProtect.key) {
+            console.log(passProtect.id.val());
+            setCookie("password", passProtect.id.val(), 1);
+            passProtect.successState(openUp());
+        } else {
+            passProtect.errorState();
+        }
+    }
+
+    function bindEvents() {
+        passProtect.id.on("keyup", function (e) {
+            if (e.keyCode === 13) {
+                checkPassword();
+            }
+        });
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    $(document).ready(function () {
+        if(getCookie('password')) openUp();
+        bindEvents();
+    });
+
+
+</script>
+
 
 </body>
 </html>
