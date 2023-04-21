@@ -1,0 +1,38 @@
+#password-modal {
+    width: 100vw;
+    height: 305vh;
+    background-color: #fafafa;
+    position: absolute;
+    z-index: 1000000;
+}
+
+.password-container {
+    position: fixed;
+    top: 38%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 25px;
+    right: 0;
+    left: 0;
+    padding: 40px;
+    background-color: #fff;
+}
+  
+.password.label {
+    display: block;
+    padding: 0em 0em 0em 0em;
+    margin: 0px 0px 0px 0px;
+    font-size: 75%;
+    color: #000000;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0em;
+}
+
+.password-container input {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
