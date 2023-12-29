@@ -1,140 +1,507 @@
-<!DOCTYPE html>
-<html lang="es" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Modal password</title>
-
-
-<style>
-
-#password-modal {
-    width: 100vw;
-    height: 305vh;
-    background-color: #000;
-    position: absolute;
-    z-index: 1000000;
-}
-
-.password-container {
-    position: fixed;
-    top: 38%;
-    max-width: 400px;
-    height: auto;
-    margin: 0 auto;
-    border-radius: 25px;
-    right: 0;
-    left: 0;
-    padding: 40px;
-    background-color: #222;
-}
-  
-.password.label {
-    display: block;
-    padding: 0em 0em 0em 0em;
-    margin: 0px 0px 0px 0px;
-    font-size: 75%;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0em;
-}
-
-.password-container input {
-    margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-}
-
-</style>
-
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLAYER</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="MR.NITROX">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+<script type="text/javascript">jwplayer.key = 'Khpp2dHxlBJHC8MCmLnBuV2jK/DwDnJMniwF6EO9HC/riJ712ZmbHg==';</script>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.2/plyr.css" />
+<script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+<script type='text/javascript' src='https://content.jwplatform.com/libraries/IDzF9Zmk.js'></script>
+<script type="text/javascript">jwplayer.key = 'Khpp2dHxlBJHC8MCmLnBuV2jK/DwDnJMniwF6EO9HC/riJ712ZmbHg==';</script>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+<script src="jwplayer.js"></script>
+  
+  <style>
+      html {
+            font-family: Poppins;
+            background:#000000;
+            margin: 0;
+            padding: 0
+        }
+
+        #myElement{
+        position:reletive;
+        width:100%!important;
+        height:100%!important
+
+
+        }
+
+    .jw-state-paused .jw-svg-icon-play path {
+        display: none;
+    }
+
+    .jw-state-paused .jw-svg-icon-play {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/play.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-state-paused .jw-icon-playback:hover .jw-svg-icon-play {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/play-hover.svg");
+    }
+
+    .jw-svg-icon-pause path {
+        display: none;
+    }
+
+    .jw-svg-icon-pause {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/pause.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-playback:hover .jw-svg-icon-pause {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/pause-hover.svg");
+    }
+
+    .jw-svg-icon-buffer path {
+        display: none;
+    }
+
+    .jw-svg-icon-buffer {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/buffer.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-svg-icon-replay path {
+        display: none;
+    }
+
+    .jw-svg-icon-replay {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/replay.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-replay:hover .jw-svg-icon-replay {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/replay-hover.svg");
+    }
+
+    .jw-svg-icon-rewind path {
+        display: none;
+    }
+
+    .jw-svg-icon-rewind {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/rewind.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-rewind:hover .jw-svg-icon-rewind {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/rewind-hover.svg");
+    }
+
+    .jw-svg-icon-next path {
+        display: none;
+    }
+
+    .jw-svg-icon-next {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/next.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-next:hover .jw-svg-icon-next {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/next-hover.svg");
+    }
+
+    .jw-svg-icon-volume-100 path {
+        display: none;
+    }
+
+    .jw-svg-icon-volume-100 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/volume-on.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-volume:hover .jw-svg-icon-volume-100 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/volume-on-hover.svg");
+    }
+
+    .jw-svg-icon-volume-0 path {
+        display: none;
+    }
+
+    .jw-svg-icon-volume-0 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/volume-off.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-volume:hover .jw-svg-icon-volume-0 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/volume-off-hover.svg");
+    }
+
+    .jw-svg-icon-cc-off path {
+        display: none;
+    }
+
+    .jw-svg-icon-cc-off {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/captions.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-cc-off:hover .jw-svg-icon-cc-off {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/captions-hover.svg");
+    }
+
+    .jw-svg-icon-playlist path {
+        display: none;
+    }
+
+    .jw-svg-icon-playlist {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/playlist.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-playlist-btn:hover .jw-svg-icon-playlist {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/playlist-hover.svg");
+    }
+
+    .jw-svg-icon-settings path {
+        display: none;
+    }
+
+    .jw-svg-icon-settings {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/settings.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-settings:hover .jw-svg-icon-settings {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/settings-hover.svg");
+    }
+
+    .jw-svg-icon-quality-100 path {
+        display: none;
+    }
+
+    .jw-svg-icon-quality-100 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/quality.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-settings-quality:hover .jw-svg-icon-quality-100 {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/quality-hover.svg");
+    }
+
+    .jw-svg-icon-close path {
+        display: none;
+    }
+
+    .jw-svg-icon-close {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/close.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-settings-close:hover .jw-svg-icon-close {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/close-hover.svg");
+    }
+
+    .jw-svg-icon-fullscreen-on path {
+        display: none;
+    }
+
+    .jw-svg-icon-fullscreen-on {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/fullscreen-on.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-on {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/fullscreen-on-hover.svg");
+    }
+
+    .jw-svg-icon-fullscreen-off path {
+        display: none;
+    }
+
+    .jw-svg-icon-fullscreen-off {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/fullscreen-off.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .jw-icon-fullscreen:hover .jw-svg-icon-fullscreen-off {
+        background-image: url("https://cdn.jsdelivr.net/gh/Hadi0609/JioTvAssets@v1.0/assets/jwp/fullscreen-off-hover.svg");
+    }
+
+    .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+    }
+
+    .loading-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+    }
+
+
+    .loading-text span {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: 50px;
+        font-weight: bold;
+        color: #00b3ff;
+        font-family: 'Quattrocento Sans', sans-serif;
+    }
+
+    .loading-text span:nth-child(1) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(2) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.2s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(3) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.4s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(4) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.6s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(5) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 0.8s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(6) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(7) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.2s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(8) {
+        filter: blur(0px);
+        animation: blur-text 1.5s 1.4s infinite linear alternate;
+    }
+
+    @keyframes blur-text {
+        0% {
+            filter: blur(0px);
+        }
+
+        100% {
+            filter: blur(4px);
+        }
+    }
+    #videoContainer {
+        position:absolute;
+        width:100%!important;
+        height:100%!important
+    }
+
+.scrollbar-track-y {
+background: #131720 !important;
+top: 10px !important;
+bottom: 10px !important;
+height: auto !important;
+width: 4px !important;
+border-radius: 4px !important;
+right: 10px !important;
+overflow: hidden;
+}
+.scrollbar-thumb-y {
+background: #2f80ed !important;
+width: 4px !important;
+border-radius: 4px !important;
+}
+.scrollbar-track-x {
+background: #131720 !important;
+left: 10px !important;
+right: 10px !important;
+height: 4px !important;
+width: auto !important;
+border-radius: 4px !important;
+bottom: 10px !important;
+overflow: hidden;
+}
+.scrollbar-thumb-x {
+background: #2f80ed !important;
+height: 4px !important;
+border-radius: 4px !important;
+}
+    .custom-button {
+      background-color: #0074d9;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .custom-button:hover {
+      background-color: #0056b3;
+    }
+
+    .button-container {
+        margin: 10px; /* Adjust the margin as needed */
+        text-align: center; /* Center align the button within the div */
+    }
+    .button-container {
+        text-align: center;
+        background-color: #87CEEB; /* Background color for the box */
+        padding: 20px; /* Padding around the buttons */
+        display: inline-block;
+    }
+    .header {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        font-size: 24px;
+    } 
+   .header::first-letter {
+       font-size: 36px; /* Increase the font size of the first letter */
+       font-weight: bold; /* Make it bold */
+       color: #ff5733; 
+   }
+ </style> 
+  
+  
+  
+  
+  
 <body>
 
-<div id="password-modal">
-			<div class="password-container">
-				<p class="password label">Por favor introduce la contraseña</p>
-				<input id="password_input" type="password" name="" value="" placeholder="Contraseña"/>
-                    <input type="submit" type="button" value="Entrar" onclick="checkPassword()" />
-			</div>
-		</div>
+  <div class="header">
+      CRICKET WEB TV
+  </div>
+<script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
 
+<div id="jwplayerDiv"></div>
 
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   
-<script language="javascript">
+    <!-- Your HTML content here -->
+    <script src="script.js"></script>
+
+<!-- Add buttons or elements to trigger the switches -->
+  <div class="button-container">
+      <button class="custom-button" onclick="switchToDRM1()">Stream 1(Hindi)</button>
+      <button class="custom-button" onclick="switchToDRM2()">Stream 2(English)</button>
+      <button class="custom-button" onclick="switchToOtherStream()">Stream 3 (astro cricket)</button>
+    <button class="custom-button" onclick="switchToOtherStream1()">Stream 4 (Fancode)</button>
+  </div>
   
-    var passProtect = {
-        id: $("#password_input"),
-        key: "sex69",
-        errorMessage: "Sorry, please try again",
-        errorState: function () {
-            passProtect.id.css("border", "1px solid rgb(255,0,0)");
-            $(".password-container .label").html(passProtect.errorMessage);
-        },
-        successMessage: "Success!",
-        successState: function () {
-            passProtect.id.css("border", "1px solid rgb(0,200,100)");
-            $(".password-container.label").html(passProtect.successMessage);
-        },
-        prompt: "Please enter password "
-    };
+  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+    <a href="https://telegram.me/+J00m9kwSn6g0ZTJl" target="_blank">
+      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">Join Telegram</button>
+    </a>
+  </div>
+  
+  
+<script>
+  
+  
+ var playerInstance = jwplayer("jwplayerDiv");
 
-    function openUp() {
-        $("#password-modal").fadeOut(250);
-    }
-
-    function checkPassword() {
-        var passVal = passProtect.id.val();
-        console.log(passVal, passProtect.key)
-        if (passVal === passProtect.key) {
-            console.log(passProtect.id.val());
-            setCookie("password", passProtect.id.val(), 1);
-            passProtect.successState(openUp());
-        } else {
-            passProtect.errorState();
+  // Function to switch to DRM 1
+  function switchToDRM1() {
+    playerInstance.setup({
+      file: "https://edge-vod02-sl.cvattv.com.ar/live/c6eds/HBO_Plus/SA_Live_dash_enc/HBO_Plus.mpd",
+      type: "dash",
+      drm: {
+        "clearkey": {
+          "keyId": "f0e7f7d458990edfab7b98b412564615",
+          "key": "79205754b7f84a62661c2dbe9de5dd5d"
         }
-    }
+      }
+    });
+  }
 
-    function bindEvents() {
-        passProtect.id.on("keyup", function (e) {
-            if (e.keyCode === 13) {
-                checkPassword();
-            }
+  // Function to switch to DRM 2
+  function switchToDRM2() {
+    playerInstance.setup({
+      file: "https://bpprod5linear.akamaized.net/bpk-tv/irdeto_com_Channel_250/output/manifest.mpd",
+      type: "dash",
+      drm: {
+        "clearkey": {
+          "keyId": "06341bf3dd635e6ca5c71188d0210373",
+          "key": "201e9857b48590ef73291e35f182a604"
+        }
+      }
+    });
+  }
+// Function to switch to another stream with M3U8 URL and no DRM
+  function switchToOtherStream() {
+    playerInstance.setup({
+      file: "https://isp.sananda.online/Astro/video.m3u8",
+      type: "hls",  // Set the type to HLS for M3U8 URLs
+    });
+  }
+// Function to switch to another stream with M3U8 URL and no DRM
+   function switchToOtherStream1() {
+  playerInstance.setup({
+    file: "https://dai.fancode.com/primary/85196_english_hls_5390ta-no/1080p.m3u8",
+    type: "hls",  // Set the type to HLS for M3U8 URLs
+  });
+  }
+
+   function switchToDRM() {
+     playerInstance.setup({
+         file: "#",
+           type: "hls",  // Set the type to HLS for M3U8 URLs
+         });
+         }
+  function switchToDRM() {
+    playerInstance.setup({
+        file: "https://isp.sananda.online/Star/video.m3u8",
+          type: "hls",  // Set the type to HLS for M3U8 URLs
         });
-    }
-
-    function setCookie(cname, cvalue, exdays) {
-        var d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
         }
-        return "";
-    }
-    $(document).ready(function () {
-        if(getCookie('password')) openUp();
-        bindEvents();
+      // Display a pop-up message when the page starts
+       window.addEventListener("load", function() {
+      var result = window.confirm("Join Telegram Group More Update");
+      if (result) {
+        window.location.href = "https://telegram.me/demo";
+      }
     });
 
-
-</script>
-
-
+ 
+  
+  
+</script>  
+  
+  
+  
+  
 </body>
 </html>
+
